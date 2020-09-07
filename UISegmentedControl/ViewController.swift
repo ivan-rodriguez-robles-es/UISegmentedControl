@@ -10,9 +10,14 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    
+    @IBOutlet weak var allertSC: UISegmentedControl!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        allertSC.selectedSegmentIndex = 3
+        
     }
 
     @IBAction func segmentedAlert(_ sender: Any) {
@@ -22,9 +27,9 @@ class ViewController: UIViewController {
         switch (segmentedControl.selectedSegmentIndex){
         case 0:
             
-            let alert = UIAlertController(title: "First Segment 0 Alert", message: ".cancel style is bolder than .defaul", preferredStyle: .alert)
+            let alert = UIAlertController(title: "Alert Segment 0 ", message: ".cancel style is bolder than .defaul", preferredStyle: .alert)
             // .cancel style bolder then .defaul
-            alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: { _ in
+            alert.addAction(UIAlertAction(title: "style: .cancel", style: .cancel, handler: { _ in
                 
                 NSLog("The \"OK\" alert occured.")
                 
@@ -34,9 +39,9 @@ class ViewController: UIViewController {
             
         case 1:
             
-            let alert = UIAlertController(title: "Second Segment 1 Alert", message: ".defaul style is not bolder than .cancel", preferredStyle: .alert)
+            let alert = UIAlertController(title: "Alert Segment 1", message: ".defaul style is not bolder than .cancel", preferredStyle: .alert)
             
-            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
+            alert.addAction(UIAlertAction(title: "style: .default", style: .default, handler: { action in
                 
                 NSLog("The \"OK\" alert occured.")
                 
@@ -46,7 +51,7 @@ class ViewController: UIViewController {
             
         case 2:
             
-            let alertController = UIAlertController(title: "Third Segment 2 Alert", message: ".destructive style is red\n.cancel style is bolder than .defaul and allways in the bottom\n", preferredStyle: .alert)
+            let alertController = UIAlertController(title: "Alert Segment 2", message: ".destructive style is red\n.cancel style is bolder than .defaul and allways in the bottom\n", preferredStyle: .alert)
                
                // Create OK button
             let OKAction = UIAlertAction(title: "default style", style: .default) { (action:UIAlertAction!) in
